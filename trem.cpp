@@ -1,6 +1,7 @@
 #include "trem.h"
 
 #include <QtCore>
+#include <semaphore.h>
 
 #define N_TRENS = 5;
 #define N_REGIOES = 7;
@@ -16,8 +17,16 @@
 #define LIVRE = 0;
 #define OCUPADO = 1;
 
+sem_t *semaforo_1;
+sem_t *semaforo_2;
+sem_t *semaforo_3;
+sem_t *semaforo_4;
+sem_t *semaforo_5;
+sem_t *semaforo_6;
+sem_t *semaforo_7;
+
 // Construtor
-Trem::Trem(int ID, int x, int y) {
+Trem::Trem(int ID, int x, int y){
     this->ID = ID;
     this->x = x;
     this->y = y;
@@ -26,10 +35,11 @@ Trem::Trem(int ID, int x, int y) {
 
 // Função a ser executada após executar trem->START
 void Trem::run() {
+    sem_init(semaforo_1, 0, );
     while (true) {
-        switch (ID) {
+        switch (ID){
             case 1:  // Trem 1
-                qInfo() << "Velocidade trem 1: " << this->velocidade;
+                // qInfo() << "Velocidade trem 1: " << this->velocidade;
                 if (velocidade == 200) {
                     break;
                 }
@@ -59,7 +69,7 @@ void Trem::run() {
                 else
                     y -= 10;
                 if (velocidade != 100) {
-                    emit updateGUI(ID, x, y);  // Emite um sinal
+                    emit updateGUI(ID, x, y);  // Emite um sinal para atualizar a posição do trem na tela
                 }
                 break;
             case 3:  // Trem 3
@@ -76,7 +86,7 @@ void Trem::run() {
                 else
                     y -= 10;
                 if (velocidade != 100) {
-                    emit updateGUI(ID, x, y);  // Emite um sinal
+                    emit updateGUI(ID, x, y);  // Emite um sinal para atualizar a posição do trem na tela
                 }
                 break;
             case 4:  // Trem 4
@@ -93,7 +103,7 @@ void Trem::run() {
                 else
                     y -= 10;
                 if (velocidade != 100) {
-                    emit updateGUI(ID, x, y);  // Emite um sinal
+                    emit updateGUI(ID, x, y);  // Emite um sinal para atualizar a posição do trem na tela
                 }
                 break;
             case 5:  // Trem 5
@@ -110,7 +120,7 @@ void Trem::run() {
                 else
                     y -= 10;
                 if (velocidade != 100) {
-                    emit updateGUI(ID, x, y);  // Emite um sinal
+                    emit updateGUI(ID, x, y);  // Emite um sinal para atualizar a posição do trem na tela
                 }
                 break;
             default:
