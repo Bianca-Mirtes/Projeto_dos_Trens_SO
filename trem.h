@@ -1,9 +1,8 @@
 #ifndef TREM_H
 #define TREM_H
 
-#include <QThread>
 #include <QDebug>
-
+#include <QThread>
 
 /*
  * Classe Trem herda QThread

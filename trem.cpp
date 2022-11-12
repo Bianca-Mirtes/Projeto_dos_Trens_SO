@@ -1,7 +1,10 @@
 #include "trem.h"
 
-#include <QtCore>
 #include <semaphore.h>
+
+#include <QtCore>
+
+#include "semaforo.h"
 
 #define N_TRENS = 5;
 #define N_REGIOES = 7;
@@ -14,9 +17,6 @@
 #define REGIAO_6 = 5;
 #define REGIAO_7 = 6;
 
-#define LIVRE = 0;
-#define OCUPADO = 1;
-
 sem_t *semaforo_1;
 sem_t *semaforo_2;
 sem_t *semaforo_3;
@@ -26,7 +26,7 @@ sem_t *semaforo_6;
 sem_t *semaforo_7;
 
 // Construtor
-Trem::Trem(int ID, int x, int y){
+Trem::Trem(int ID, int x, int y) {
     this->ID = ID;
     this->x = x;
     this->y = y;
@@ -35,9 +35,9 @@ Trem::Trem(int ID, int x, int y){
 
 // Função a ser executada após executar trem->START
 void Trem::run() {
-    //sem_init(semaforo_1, 0, );
+    // sem_init(semaforo_1, 0, );
     while (true) {
-        switch (ID){
+        switch (ID) {
             case 1:  // Trem 1
                 // qInfo() << "Velocidade trem 1: " << this->velocidade;
                 if (velocidade == 200) {
