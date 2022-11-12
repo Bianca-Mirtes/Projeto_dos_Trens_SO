@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>940</width>
-    <height>658</height>
+    <width>943</width>
+    <height>662</height>
    </rect>
   </property>
   <property name="palette">
@@ -1120,7 +1120,7 @@ QSlider::handle:horizontal {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>940</width>
+     <width>943</width>
      <height>21</height>
     </rect>
    </property>
