@@ -10,6 +10,421 @@
     <height>658</height>
    </rect>
   </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>195</red>
+        <green>195</green>
+        <blue>195</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Light">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Midlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>225</red>
+        <green>225</green>
+        <blue>225</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Dark">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>97</red>
+        <green>97</green>
+        <blue>97</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Mid">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>130</red>
+        <green>130</green>
+        <blue>130</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Text">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="BrightText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ButtonText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>195</red>
+        <green>195</green>
+        <blue>195</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="AlternateBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>225</red>
+        <green>225</green>
+        <blue>225</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>220</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>240</red>
+        <green>240</green>
+        <blue>240</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Light">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Midlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>227</red>
+        <green>227</green>
+        <blue>227</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Dark">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>160</red>
+        <green>160</green>
+        <blue>160</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Mid">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>160</red>
+        <green>160</green>
+        <blue>160</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Text">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="BrightText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ButtonText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>240</red>
+        <green>240</green>
+        <blue>240</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>105</red>
+        <green>105</green>
+        <blue>105</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="AlternateBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>245</red>
+        <green>245</green>
+        <blue>245</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>220</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>97</red>
+        <green>97</green>
+        <blue>97</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>195</red>
+        <green>195</green>
+        <blue>195</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Light">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Midlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>225</red>
+        <green>225</green>
+        <blue>225</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Dark">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>97</red>
+        <green>97</green>
+        <blue>97</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Mid">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>130</red>
+        <green>130</green>
+        <blue>130</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Text">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>97</red>
+        <green>97</green>
+        <blue>97</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="BrightText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ButtonText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>97</red>
+        <green>97</green>
+        <blue>97</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>195</red>
+        <green>195</green>
+        <blue>195</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>195</red>
+        <green>195</green>
+        <blue>195</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="AlternateBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>245</red>
+        <green>245</green>
+        <blue>245</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>220</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -17,8 +432,8 @@
    <widget class="QLabel" name="trilho1_11">
     <property name="geometry">
      <rect>
-      <x>780</x>
-      <y>230</y>
+      <x>810</x>
+      <y>231</y>
       <width>21</width>
       <height>191</height>
      </rect>
@@ -33,8 +448,8 @@
    <widget class="QLabel" name="trilho5">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>230</y>
+      <x>90</x>
+      <y>231</y>
       <width>250</width>
       <height>17</height>
      </rect>
@@ -49,8 +464,8 @@
    <widget class="QLabel" name="trilho1_8">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>410</y>
+      <x>340</x>
+      <y>411</y>
       <width>250</width>
       <height>17</height>
      </rect>
@@ -65,8 +480,8 @@
    <widget class="QLabel" name="trem_5">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>230</y>
+      <x>580</x>
+      <y>231</y>
       <width>21</width>
       <height>17</height>
      </rect>
@@ -81,8 +496,8 @@
    <widget class="QLabel" name="trem_4">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>230</y>
+      <x>340</x>
+      <y>231</y>
       <width>21</width>
       <height>17</height>
      </rect>
@@ -97,11 +512,14 @@
    <widget class="QPushButton" name="terminar">
     <property name="geometry">
      <rect>
-      <x>620</x>
+      <x>660</x>
       <y>500</y>
       <width>75</width>
       <height>24</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="text">
      <string>Desligar</string>
@@ -110,11 +528,17 @@
    <widget class="QPushButton" name="iniciar">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>230</x>
       <y>500</y>
       <width>75</width>
       <height>24</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
     </property>
     <property name="text">
      <string>Ligar</string>
@@ -123,8 +547,8 @@
    <widget class="QLabel" name="trilho3">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>30</y>
+      <x>460</x>
+      <y>31</y>
       <width>21</width>
       <height>200</height>
      </rect>
@@ -139,8 +563,8 @@
    <widget class="QLabel" name="trilho1_3">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>230</y>
+      <x>580</x>
+      <y>231</y>
       <width>250</width>
       <height>17</height>
      </rect>
@@ -155,8 +579,8 @@
    <widget class="QLabel" name="trilho1">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>30</y>
+      <x>210</x>
+      <y>31</y>
       <width>250</width>
       <height>17</height>
      </rect>
@@ -171,8 +595,8 @@
    <widget class="QLabel" name="trilho1_4">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>30</y>
+      <x>690</x>
+      <y>31</y>
       <width>21</width>
       <height>200</height>
      </rect>
@@ -187,8 +611,8 @@
    <widget class="QLabel" name="trem_1">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>30</y>
+      <x>210</x>
+      <y>31</y>
       <width>21</width>
       <height>17</height>
      </rect>
@@ -206,8 +630,8 @@
    <widget class="QLabel" name="trilho1_6">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>410</y>
+      <x>90</x>
+      <y>411</y>
       <width>250</width>
       <height>17</height>
      </rect>
@@ -222,8 +646,8 @@
    <widget class="QLabel" name="trilho2">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>30</y>
+      <x>460</x>
+      <y>31</y>
       <width>250</width>
       <height>17</height>
      </rect>
@@ -238,8 +662,8 @@
    <widget class="QLabel" name="trilho5_2">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>230</y>
+      <x>330</x>
+      <y>231</y>
       <width>250</width>
       <height>17</height>
      </rect>
@@ -254,8 +678,8 @@
    <widget class="QLabel" name="trem_2">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>30</y>
+      <x>460</x>
+      <y>31</y>
       <width>21</width>
       <height>17</height>
      </rect>
@@ -270,8 +694,8 @@
    <widget class="QLabel" name="trilho1_10">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>410</y>
+      <x>580</x>
+      <y>411</y>
       <width>250</width>
       <height>17</height>
      </rect>
@@ -286,8 +710,8 @@
    <widget class="QLabel" name="trem_3">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>230</y>
+      <x>90</x>
+      <y>231</y>
       <width>21</width>
       <height>17</height>
      </rect>
@@ -302,8 +726,8 @@
    <widget class="QLabel" name="trilho1_5">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>230</y>
+      <x>90</x>
+      <y>231</y>
       <width>21</width>
       <height>191</height>
      </rect>
@@ -318,8 +742,8 @@
    <widget class="QLabel" name="trilho1_2">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>30</y>
+      <x>210</x>
+      <y>31</y>
       <width>21</width>
       <height>200</height>
      </rect>
@@ -334,8 +758,8 @@
    <widget class="QLabel" name="trilho1_7">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>230</y>
+      <x>340</x>
+      <y>231</y>
       <width>21</width>
       <height>191</height>
      </rect>
@@ -350,8 +774,8 @@
    <widget class="QLabel" name="trilho1_9">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>230</y>
+      <x>580</x>
+      <y>231</y>
       <width>21</width>
       <height>191</height>
      </rect>
@@ -364,13 +788,22 @@
     </property>
    </widget>
    <widget class="QSlider" name="slider_trem1">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>390</x>
       <y>460</y>
       <width>160</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
     </property>
     <property name="toolTip">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -394,13 +827,13 @@ QSlider::handle:horizontal {
 }</string>
     </property>
     <property name="minimum">
-     <number>0</number>
+     <number>1</number>
     </property>
     <property name="maximum">
-     <number>100</number>
+     <number>200</number>
     </property>
     <property name="value">
-     <number>50</number>
+     <number>100</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -411,15 +844,27 @@ QSlider::handle:horizontal {
     <property name="invertedControls">
      <bool>false</bool>
     </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBothSides</enum>
+    </property>
+    <property name="tickInterval">
+     <number>40</number>
+    </property>
    </widget>
    <widget class="QSlider" name="slider_trem2">
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>390</x>
       <y>490</y>
       <width>160</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
     </property>
     <property name="styleSheet">
      <string notr="true">QSlider::groove:horizontal {
@@ -436,11 +881,14 @@ QSlider::handle:horizontal {
     border-radius: 3px;
 }</string>
     </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
     <property name="maximum">
-     <number>100</number>
+     <number>200</number>
     </property>
     <property name="value">
-     <number>50</number>
+     <number>100</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -448,15 +896,24 @@ QSlider::handle:horizontal {
     <property name="invertedAppearance">
      <bool>true</bool>
     </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBothSides</enum>
+    </property>
+    <property name="tickInterval">
+     <number>40</number>
+    </property>
    </widget>
    <widget class="QSlider" name="slider_trem3">
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>390</x>
       <y>520</y>
       <width>160</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">QSlider::groove:horizontal {
@@ -473,11 +930,14 @@ QSlider::handle:horizontal {
     border-radius: 3px;
 }</string>
     </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
     <property name="maximum">
-     <number>100</number>
+     <number>200</number>
     </property>
     <property name="value">
-     <number>50</number>
+     <number>100</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -485,15 +945,24 @@ QSlider::handle:horizontal {
     <property name="invertedAppearance">
      <bool>true</bool>
     </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBothSides</enum>
+    </property>
+    <property name="tickInterval">
+     <number>40</number>
+    </property>
    </widget>
    <widget class="QSlider" name="slider_trem4">
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>390</x>
       <y>550</y>
       <width>160</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">QSlider::groove:horizontal {
@@ -510,11 +979,14 @@ QSlider::handle:horizontal {
     border-radius: 3px;
 }</string>
     </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
     <property name="maximum">
-     <number>100</number>
+     <number>200</number>
     </property>
     <property name="value">
-     <number>50</number>
+     <number>100</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -522,15 +994,24 @@ QSlider::handle:horizontal {
     <property name="invertedAppearance">
      <bool>true</bool>
     </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBothSides</enum>
+    </property>
+    <property name="tickInterval">
+     <number>40</number>
+    </property>
    </widget>
    <widget class="QSlider" name="slider_trem5">
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>390</x>
       <y>580</y>
       <width>160</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">QSlider::groove:horizontal {
@@ -547,11 +1028,14 @@ QSlider::handle:horizontal {
     border-radius: 3px;
 }</string>
     </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
     <property name="maximum">
-     <number>100</number>
+     <number>200</number>
     </property>
     <property name="value">
-     <number>50</number>
+     <number>100</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -559,11 +1043,17 @@ QSlider::handle:horizontal {
     <property name="invertedAppearance">
      <bool>true</bool>
     </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBothSides</enum>
+    </property>
+    <property name="tickInterval">
+     <number>40</number>
+    </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>320</x>
+      <x>360</x>
       <y>440</y>
       <width>221</width>
       <height>21</height>
@@ -573,6 +1063,29 @@ QSlider::handle:horizontal {
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Controle de Velocidade dos Trens&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>439</y>
+      <width>201</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="acceptDrops">
+     <bool>false</bool>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <zorder>frame</zorder>
    <zorder>trilho1_10</zorder>
    <zorder>trilho1_8</zorder>
    <zorder>trilho2</zorder>
@@ -608,7 +1121,7 @@ QSlider::handle:horizontal {
      <x>0</x>
      <y>0</y>
      <width>940</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
