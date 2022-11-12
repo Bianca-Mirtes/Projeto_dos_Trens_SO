@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-
+#include <QPixmap>
 #include <iostream>
 
 #include "ui_mainwindow.h"
@@ -9,11 +9,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->setupUi(this);
 
     // Cria um novo trem com os seguintes parâmetros (ID, posição X, posição Y)
-    trem1 = new Trem(1, 210, 30);
-    trem2 = new Trem(2, 460, 30);
-    trem3 = new Trem(3, 90, 230);
-    trem4 = new Trem(4, 340, 230);
-    trem5 = new Trem(5, 580, 230);
+    trem1 = new Trem(1, 230, 30);
+    trem2 = new Trem(2, 470, 30);
+    trem3 = new Trem(3, 110, 230);
+    trem4 = new Trem(4, 350, 230);
+    trem5 = new Trem(5, 590, 230);
 
     /*
      * Conecta o sinal UPDATEGUI à função UPDATEINTERFACE.
@@ -33,19 +33,19 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
 void MainWindow::updateInterface(int id, int x, int y) {
     switch (id) {
         case 1:  // Atualiza a posição do objeto da tela (quadrado) que representa o trem1
-            ui->trem_1->setGeometry(x, y, 21, 17);
+            ui->trem_1->setGeometry(x, y, 20, 20);
             break;
         case 2:  // Atualiza a posição do objeto da tela (quadrado) que representa o trem2
-            ui->trem_2->setGeometry(x, y, 21, 17);
+            ui->trem_2->setGeometry(x, y, 20, 20);
             break;
         case 3:
-            ui->trem_3->setGeometry(x, y, 21, 17);
+            ui->trem_3->setGeometry(x, y, 20, 20);
             break;
         case 4:
-            ui->trem_4->setGeometry(x, y, 21, 17);
+            ui->trem_4->setGeometry(x, y, 20, 20);
             break;
         case 5:
-            ui->trem_5->setGeometry(x, y, 21, 17);
+            ui->trem_5->setGeometry(x, y, 20, 20);
             break;
         default:
             break;

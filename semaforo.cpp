@@ -1,5 +1,5 @@
-#include "semaforo.h"
+// #include "semaforo.h"
 
-semaforo::semaforo(int verif){
-   this->disponibilidadeTrajeto = verif;
-}
+// semaforo::semaforo(int verif){
+//    this->disponibilidadeTrajeto = verif;
+// }

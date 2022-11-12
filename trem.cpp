@@ -35,7 +35,7 @@ Trem::Trem(int ID, int x, int y){
 
 // Função a ser executada após executar trem->START
 void Trem::run() {
-    sem_init(semaforo_1, 0, );
+    //sem_init(semaforo_1, 0, );
     while (true) {
         switch (ID){
             case 1:  // Trem 1
@@ -43,11 +43,11 @@ void Trem::run() {
                 if (velocidade == 200) {
                     break;
                 }
-                if (y == 30 && x < 460)
+                if (y == 30 && x < 470)
                     x += 10;
-                else if (x == 460 && y < 230)
+                else if (x == 470 && y < 230)
                     y += 10;
-                else if (x > 210 && y == 230)
+                else if (x > 230 && y == 230)
                     x -= 10;
                 else
                     y -= 10;
@@ -60,11 +60,11 @@ void Trem::run() {
                 if (velocidade == 200) {
                     break;
                 }
-                if (y == 30 && x < 690)
+                if (y == 30 && x < 710)
                     x += 10;
-                else if (x == 690 && y < 230)
+                else if (x == 710 && y < 230)
                     y += 10;
-                else if (x > 460 && y == 230)
+                else if (x > 470 && y == 230)
                     x -= 10;
                 else
                     y -= 10;
@@ -77,11 +77,11 @@ void Trem::run() {
                 if (velocidade == 200) {
                     break;
                 }
-                if (y == 230 && x < 340)
+                if (y == 230 && x < 350)
                     x += 10;
-                else if (x == 340 && y < 410)
+                else if (x == 350 && y < 410)
                     y += 10;
-                else if (x > 90 && y == 410)
+                else if (x > 110 && y == 410)
                     x -= 10;
                 else
                     y -= 10;
@@ -94,11 +94,11 @@ void Trem::run() {
                 if (velocidade == 200) {
                     break;
                 }
-                if (y == 230 && x < 580)
+                if (y == 230 && x < 590)
                     x += 10;
-                else if (x == 580 && y < 410)
+                else if (x == 590 && y < 410)
                     y += 10;
-                else if (x > 340 && y == 410)
+                else if (x > 350 && y == 410)
                     x -= 10;
                 else
                     y -= 10;
@@ -111,11 +111,11 @@ void Trem::run() {
                 if (velocidade == 200) {
                     break;
                 }
-                if (y == 230 && x < 810)
+                if (y == 230 && x < 830)
                     x += 10;
-                else if (x == 810 && y < 410)
+                else if (x == 830 && y < 410)
                     y += 10;
-                else if (x > 580 && y == 410)
+                else if (x > 590 && y == 410)
                     x -= 10;
                 else
                     y -= 10;
