@@ -4,13 +4,16 @@
 #define N_TRENS = 5;
 #define N_REGIOES = 7;
 
-#define REGIAO_1 = 1;
-#define REGIAO_2 = 2;
-#define REGIAO_3 = 3;
-#define REGIAO_4 = 4;
-#define REGIAO_5 = 5;
-#define REGIAO_6 = 6;
-#define REGIAO_7 = 7;
+#define REGIAO_1 = 0;
+#define REGIAO_2 = 1;
+#define REGIAO_3 = 2;
+#define REGIAO_4 = 3;
+#define REGIAO_5 = 4;
+#define REGIAO_6 = 5;
+#define REGIAO_7 = 6;
+
+#define LIVRE = 0;
+#define OCUPADO = 1;
 
 //Construtor
 Trem::Trem(int ID, int x, int y){
@@ -33,7 +36,7 @@ void Trem::run(){
                 x-=10;
             else
                 y-=10;
-            if(velocidade != 0){
+            if(velocidade != 100){
                 emit updateGUI(ID, x,y);    //Emite um sinal
             }
             break;
@@ -46,7 +49,7 @@ void Trem::run(){
                 x-=10;
             else
                 y-=10;
-            if(velocidade != 0){
+            if(velocidade != 100){
                 emit updateGUI(ID, x,y);    //Emite um sinal
             }
             break;
@@ -59,7 +62,7 @@ void Trem::run(){
                 x -= 10;
             else
                 y -= 10;
-            if(velocidade != 0){
+            if(velocidade != 100){
                 emit updateGUI(ID, x,y);    //Emite um sinal
             }
             break;
@@ -72,7 +75,7 @@ void Trem::run(){
                 x -= 10;
             else
                 y -= 10;
-            if(velocidade != 0){
+            if(velocidade != 100){
                 emit updateGUI(ID, x,y);    //Emite um sinal
             }
             break;
@@ -85,7 +88,7 @@ void Trem::run(){
                 x -= 10;
             else
                 y -= 10;
-            if(velocidade != 0){
+            if(velocidade != 100){
                 emit updateGUI(ID, x,y);    //Emite um sinal
             }
             break;

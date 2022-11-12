@@ -405,6 +405,9 @@ QSlider::handle:horizontal {
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
+    <property name="invertedAppearance">
+     <bool>true</bool>
+    </property>
     <property name="invertedControls">
      <bool>false</bool>
     </property>
@@ -442,6 +445,9 @@ QSlider::handle:horizontal {
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
+    <property name="invertedAppearance">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QSlider" name="slider_trem3">
     <property name="geometry">
@@ -475,6 +481,9 @@ QSlider::handle:horizontal {
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="invertedAppearance">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QSlider" name="slider_trem4">
@@ -510,6 +519,9 @@ QSlider::handle:horizontal {
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
+    <property name="invertedAppearance">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QSlider" name="slider_trem5">
     <property name="geometry">
@@ -543,6 +555,9 @@ QSlider::handle:horizontal {
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="invertedAppearance">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label">
