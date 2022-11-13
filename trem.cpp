@@ -3,19 +3,18 @@
 #include <semaphore.h>
 
 #include <QtCore>
-
 #include "semaforo.h"
 
-#define N_TRENS = 5;
-#define N_REGIOES = 7;
+#define N_TRENS 5;
+#define N_REGIOES 7;
 
-#define REGIAO_1 = 0;
-#define REGIAO_2 = 1;
-#define REGIAO_3 = 2;
-#define REGIAO_4 = 3;
-#define REGIAO_5 = 4;
-#define REGIAO_6 = 5;
-#define REGIAO_7 = 6;
+#define REGIAO_1 0;
+#define REGIAO_2 1;
+#define REGIAO_3 2;
+#define REGIAO_4 3;
+#define REGIAO_5 4;
+#define REGIAO_6 5;
+#define REGIAO_7 6;
 
 
 sem_t semaforo_1;
@@ -34,26 +33,55 @@ Trem::Trem(int ID, int x, int y) {
     this->velocidade = 50;
 }
 
+int Trem::getRegião(int x, int y){
+    if(x == 470 && (y > 30 && y < 230)){
+        return REGIAO_1;
+    }
+    if(y == 230 && (x > 210 && x < 350)){
+        return REGIAO_2;
+    }
+    if(y == 230 && (x > 350 && x < 470)){
+        return REGIAO_3;
+    }
+    if(y == 230 && (x > 470 && x < 590)){
+        return REGIAO_4;
+    }
+    if(y == 230 && (x > 590 && x < 710)){
+        return REGIAO_5;
+    }
+    if(x == 350 && (y > 230 && y < 410)){
+        return REGIAO_6;
+    }
+    if(x == 590 && (y > 230 && y < 410)){
+        return REGIAO_7;
+    }
+}
+
 // Função a ser executada após executar trem->START
 void Trem::run() {
     sem_init(&semaforo_1, 0, 2);
     sem_init(&semaforo_2, 0, 2);
     sem_init(&semaforo_3, 0, 2);
+    sem_init(&semaforo_4, 0, 2);
+    sem_init(&semaforo_5, 0, 2);
+    sem_init(&semaforo_6, 0, 2);
+    sem_init(&semaforo_7, 0, 2);
     while (true) {
         switch (ID) {
             case 1:  // Trem 1
-                // qInfo() << "Velocidade trem 1: " << this->velocidade;
+                qInfo() << getRegião(470, 90);
+                break; 
                 if (velocidade == 200) {
                     break;
                 }
                 if (y == 30 && x < 470){
                     if(x == 450){
-                        //sem_wait(&semaforo_1);
+                        sem_wait(&semaforo_1);
                     }
                     x += 10;
                 }else if (x == 470 && y < 230){
                     if(y == 210){
-                        break;
+                        //break;
                     }
                     y += 10;
                 }else if (x > 230 && y == 230){
@@ -89,7 +117,7 @@ void Trem::run() {
                         //break;
                     }
                     if(x == 490){
-                        break;
+                        //break;
                     }
                     x -= 10;
                 }  
@@ -142,7 +170,7 @@ void Trem::run() {
                     y += 10; 
                 }else if (x > 350 && y == 410){
                     if(x == 370){
-                        break;
+                        //break;
                     }
                     x -= 10;
                 }else{
@@ -169,7 +197,7 @@ void Trem::run() {
                     x -= 10;                    
                 }else{
                     if(y == 250){
-                        break;
+                        //break;
                     }
                     y -= 10; 
                 }   
