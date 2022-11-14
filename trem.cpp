@@ -1,9 +1,6 @@
 #include "trem.h"
 
-#include <semaphore.h>
-
 #include <QtCore>
-#include "semaforo.h"
 
 #define N_TRENS 5;
 #define N_REGIOES 7;
@@ -16,14 +13,6 @@
 #define REGIAO_6 5;
 #define REGIAO_7 6;
 
-
-sem_t semaforo_1;
-sem_t semaforo_2;
-sem_t semaforo_3;
-sem_t semaforo_4;
-sem_t semaforo_5;
-sem_t semaforo_6;
-sem_t semaforo_7;
 
 // Construtor
 Trem::Trem(int ID, int x, int y) {
@@ -59,32 +48,21 @@ int Trem::getRegião(int x, int y){
 
 // Função a ser executada após executar trem->START
 void Trem::run() {
-    sem_init(&semaforo_1, 0, 3);
-    sem_init(&semaforo_2, 0, 2);
-    sem_init(&semaforo_3, 0, 2);
-    sem_init(&semaforo_4, 0, 2);
-    sem_init(&semaforo_5, 0, 2);
-    sem_init(&semaforo_6, 0, 2);
-    sem_init(&semaforo_7, 0, 2);
     while (true) {
         switch (ID) {
             case 1:  // Trem 1
-                //qInfo() << getRegião(470, 90);
+                // qInfo() << getRegião(470, 90);
                 if (velocidade == 200){
                     break;
                 }
                 if (y == 30 && x < 470){
                     if(x == 450){
-                        if(y == 230){
-                            sem_post(&semaforo_1);
-                        }else{
-                            sem_wait(&semaforo_1);
-                        }
+                        emit semaforos(ID, x, y);
                     }
                     x += 10;
                 }else if (x == 470 && y < 230){
                     if(y == 210){
-                        //break;
+                        emit semaforos(ID, x, y);
                     }
                     y += 10;
                 }else if (x > 230 && y == 230){
@@ -120,16 +98,14 @@ void Trem::run() {
                         //break;
                     }
                     if(x == 490){
-                        if(y == 30){
-                            sem_post(&semaforo_1);
-                        }else{
-                          sem_wait(&semaforo_1);  
-                        }
-                        //break;
+                        emit semaforos(ID, x, y);
                     }
                     x -= 10;
                 }  
                 else{
+                    if(y == 50){
+                        emit semaforos(ID, x, y);
+                    }
                     y -= 10;
                 }  
                 if (velocidade != 100) {

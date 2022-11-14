@@ -3,6 +3,7 @@
 
 #include <QDebug>
 #include <QThread>
+#include <semaphore.h>
 
 /*
  * Classe Trem herda QThread
@@ -22,6 +23,7 @@ class Trem : public QThread {
     // Cria um sinal
    signals:
     void updateGUI(int, int, int);
+    void semaforos(int, int, int);
 
    private:
     int x;           // posição X do trem na tela

@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include <QPixmap>
 #include <iostream>
+#include <semaphore.h>
 
 #include "ui_mainwindow.h"
 
@@ -15,6 +16,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     trem4 = new Trem(4, 350, 230);
     trem5 = new Trem(5, 590, 230);
 
+    sem_init(&semaforo_1, 0, 1);
+    sem_init(&semaforo_2, 0, 1);
+    sem_init(&semaforo_3, 0, 1);
+    sem_init(&semaforo_4, 0, 1);
+    sem_init(&semaforo_5, 0, 1);
+    sem_init(&semaforo_6, 0, 1);
+    sem_init(&semaforo_7, 0, 1);
     /*
      * Conecta o sinal UPDATEGUI à função UPDATEINTERFACE.
      * Ou seja, sempre que o sinal UPDATEGUI foi chamado, será executada a função UPDATEINTERFACE.
@@ -27,6 +35,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     connect(trem3, SIGNAL(updateGUI(int, int, int)), SLOT(updateInterface(int, int, int)));
     connect(trem4, SIGNAL(updateGUI(int, int, int)), SLOT(updateInterface(int, int, int)));
     connect(trem5, SIGNAL(updateGUI(int, int, int)), SLOT(updateInterface(int, int, int)));
+
+    connect(trem1, SIGNAL(semaforos(int, int, int)), SLOT(controlaSemaforos(int, int, int)));
+    connect(trem2, SIGNAL(semaforos(int, int, int)), SLOT(controlaSemaforos(int, int, int)));
+    connect(trem3, SIGNAL(semaforos(int, int, int)), SLOT(controlaSemaforos(int, int, int)));
+    connect(trem4, SIGNAL(semaforos(int, int, int)), SLOT(controlaSemaforos(int, int, int)));
+    connect(trem5, SIGNAL(semaforos(int, int, int)), SLOT(controlaSemaforos(int, int, int)));
+
 }
 
 // Função que será executada quando o sinal UPDATEGUI for emitido
@@ -52,6 +67,8 @@ void MainWindow::updateInterface(int id, int x, int y) {
     }
 }
 
+
+
 MainWindow::~MainWindow() {
     delete ui;
 }
@@ -59,12 +76,41 @@ MainWindow::~MainWindow() {
 /*
  * Ao clicar, trens começam execução
  */
-void MainWindow::on_iniciar_clicked() {
+void MainWindow::on_iniciar_clicked(){
     trem1->start();
     trem2->start();
     trem3->start();
     trem4->start();
     trem5->start();
+}
+
+void MainWindow::controlaSemaforos(int ID, int x, int y){
+    switch (ID) {
+        case 1:
+            if (y == 30 && x < 470){
+                if(x == 450){
+                    qInfo() << "status: " <<  sem_wait(&semaforo_1);
+                }
+            }else if (x == 470 && y < 230){
+                if(y == 210){
+                    qInfo() << "Status: " << sem_post(&semaforo_1);
+                }
+            }
+        case 2:
+            if (x > 470 && y == 230){
+                if(x == 610){
+                    //break;
+                }
+                if(x == 490){
+                    qInfo() << "STATUS: " << sem_wait(&semaforo_1);
+                }
+            }else if(y == 50){
+                qInfo() << "STATUs: " << sem_post(&semaforo_1);
+            }
+            break;
+        default:
+            break;
+    }
 }
 
 /*
