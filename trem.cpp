@@ -27,19 +27,24 @@ void Trem::run() {
     while (true) {
         switch (ID) {
             case 1:  // Trem 1
+                qInfo() << "Valor semaforo 1: " << semaforos->getValorSemaforo(1);
+
                 if (velocidade == 200) {
                     break;
                 }
                 if (y == 30 && x < 470) {
-                    if (x == 450 && semaforos->getValorSemaforo(1) == 0) {
-                        sem_post(semaforos->getSemaforo(1));
+                    if (x == 450 && semaforos->getValorSemaforo(1) > 0) {
+                        sem_wait(semaforos->getSemaforo(1));
+                    } else if (x == 450 && semaforos->getValorSemaforo(1) == 0) {
+                        break;
                     }
-                    qInfo() << semaforos->getValorSemaforo(1);
-
                     x += 10;
                 } else if (x == 470 && y < 230) {
                     y += 10;
                 } else if (x > 230 && y == 230) {
+                    if (x == 470 && semaforos->getValorSemaforo(1) == 0) {
+                        sem_post(semaforos->getSemaforo(1));
+                    }
                     x -= 10;
                 } else {
                     y -= 10;
@@ -49,16 +54,22 @@ void Trem::run() {
                 }
                 break;
             case 2:  // Trem 2
-                // qInfo() << "Teste do getValue: " << valorSemaforo;
-                // qInfo() << "Velocidade trem 2: " << this->velocidade;
                 if (velocidade == 200) {
                     break;
                 }
                 if (y == 30 && x < 710) {
+                    if (x == 470 && semaforos->getValorSemaforo(1) == 0) {
+                        sem_post(semaforos->getSemaforo(1));
+                    }
                     x += 10;
                 } else if (x == 710 && y < 230) {
                     y += 10;
                 } else if (x > 470 && y == 230) {
+                    if (x == 490 && semaforos->getValorSemaforo(1) > 0) {
+                        sem_wait(semaforos->getSemaforo(1));
+                    } else if (x == 490 && semaforos->getValorSemaforo(1) == 0) {
+                        break;
+                    }
                     x -= 10;
                 } else {
                     y -= 10;
@@ -68,7 +79,6 @@ void Trem::run() {
                 }
                 break;
             case 3:  // Trem 3
-                // qInfo() << "Velocidade trem 3: " << this->velocidade;
                 if (velocidade == 200) {
                     break;
                 }
@@ -86,7 +96,6 @@ void Trem::run() {
                 }
                 break;
             case 4:  // Trem 4
-                // qInfo() << "Velocidade trem 4: " << this->velocidade;
                 if (velocidade == 200) {
                     break;
                 }
@@ -105,7 +114,6 @@ void Trem::run() {
                 }
                 break;
             case 5:  // Trem 5
-                // qInfo() << "Velocidade trem 5: " << this->velocidade;
                 if (velocidade == 200) {
                     break;
                 }
