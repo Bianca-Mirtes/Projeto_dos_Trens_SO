@@ -14,10 +14,18 @@ class Semaforo {
     sem_t semaforo_6;
     sem_t semaforo_7;
 
+    int valorSemaforo1;
+    int valorSemaforo2;
+    int valorSemaforo3;
+    int valorSemaforo4;
+    int valorSemaforo5;
+    int valorSemaforo6;
+    int valorSemaforo7;
+
    public:
     Semaforo();
-    int teste();
-    sem_t getSemaforo(int num);
+    sem_t* getSemaforo(int num);
+    int getValorSemaforo(int num);
 };
 
 #endif

@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
                                           ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
+    // Criando classe semaforo que contém todos os semaforos.
     semaforos = new Semaforo();
     // Cria um novo trem com os seguintes parâmetros (ID, posição X, posição Y)
     trem1 = new Trem(1, 230, 30, semaforos);
@@ -17,15 +18,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     trem3 = new Trem(3, 110, 230, semaforos);
     trem4 = new Trem(4, 350, 230, semaforos);
     trem5 = new Trem(5, 590, 230, semaforos);
-
-    // Criando semaforos
-    // sem_init(&semaforo_1, 0, 0);
-    // sem_init(&semaforo_2, 0, 0);
-    // sem_init(&semaforo_3, 0, 0);
-    // sem_init(&semaforo_4, 0, 0);
-    // sem_init(&semaforo_5, 0, 0);
-    // sem_init(&semaforo_6, 0, 0);
-    // sem_init(&semaforo_7, 0, 0);
 
     /*
      * Conecta o sinal UPDATEGUI à função UPDATEINTERFACE.

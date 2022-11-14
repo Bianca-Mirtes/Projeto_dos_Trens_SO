@@ -55,20 +55,21 @@ void Trem::run() {
             case 1:  // Trem 1
                 // qInfo() << getRegião(470, 90);
                 if (velocidade == 200) {
-                    semaforos.teste();
                     break;
                 }
                 if (y == 30 && x < 470) {
-                    // if (x == 450) {
-                    //     if (getValorSemaforo(&semaforo_1) > 0) {
-                    //         qInfo() << "GetValorSemaforo: " << getValorSemaforo(&semaforo_1);
-                    //         break;
-                    //     }
-                    // }
+                    if (x == 450) {
+                        sem_post(semaforos->getSemaforo(1));
+                        qInfo() << "Vermelho Entrou: " << semaforos->getValorSemaforo(1);
+                    }
                     x += 10;
                 } else if (x == 470 && y < 230) {
                     y += 10;
                 } else if (x > 230 && y == 230) {
+                    if (x == 450) {
+                        sem_wait(semaforos->getSemaforo(1));
+                        qInfo() << "Vermelho saiu: " << semaforos->getValorSemaforo(1);
+                    }
                     x -= 10;
                 } else {
                     y -= 10;
@@ -84,18 +85,21 @@ void Trem::run() {
                     break;
                 }
                 if (y == 30 && x < 710) {
-                    // if (x == 490 && valorSemaforo > 0) {
-                    //     qInfo() << "Saiu do Ponto Crítico T2";
-                    //     sem_wait(&semaforo_1);
-                    // }
+                    if (x == 490) {
+                        sem_wait(semaforos->getSemaforo(1));
+                        qInfo() << "Verde saiu: " << semaforos->getValorSemaforo(1);
+                    }
+
                     x += 10;
                 } else if (x == 710 && y < 230) {
                     y += 10;
                 } else if (x > 470 && y == 230) {
-                    // if (x == 490) {
-                    //     qInfo() << "Entrou no Ponto Crítico T2";
-                    //     sem_post(&semaforo_1);
-                    // }
+                    if (x == 490 && semaforos->getValorSemaforo(1) > 0) {
+                        break;
+                    } else if (x == 490 && semaforos->getValorSemaforo(1) == 0) {
+                        sem_post(semaforos->getSemaforo(1));
+                        qInfo() << "Verde Entrou: " << semaforos->getValorSemaforo(1);
+                    }
                     x -= 10;
                 } else {
                     y -= 10;
