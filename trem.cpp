@@ -59,7 +59,7 @@ int Trem::getRegião(int x, int y){
 
 // Função a ser executada após executar trem->START
 void Trem::run() {
-    sem_init(&semaforo_1, 0, 2);
+    sem_init(&semaforo_1, 0, 3);
     sem_init(&semaforo_2, 0, 2);
     sem_init(&semaforo_3, 0, 2);
     sem_init(&semaforo_4, 0, 2);
@@ -69,14 +69,17 @@ void Trem::run() {
     while (true) {
         switch (ID) {
             case 1:  // Trem 1
-                qInfo() << getRegião(470, 90);
-                break; 
-                if (velocidade == 200) {
+                //qInfo() << getRegião(470, 90);
+                if (velocidade == 200){
                     break;
                 }
                 if (y == 30 && x < 470){
                     if(x == 450){
-                        sem_wait(&semaforo_1);
+                        if(y == 230){
+                            sem_post(&semaforo_1);
+                        }else{
+                            sem_wait(&semaforo_1);
+                        }
                     }
                     x += 10;
                 }else if (x == 470 && y < 230){
@@ -117,6 +120,11 @@ void Trem::run() {
                         //break;
                     }
                     if(x == 490){
+                        if(y == 30){
+                            sem_post(&semaforo_1);
+                        }else{
+                          sem_wait(&semaforo_1);  
+                        }
                         //break;
                     }
                     x -= 10;
