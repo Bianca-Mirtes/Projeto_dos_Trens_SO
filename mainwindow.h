@@ -46,13 +46,5 @@ class MainWindow : public QMainWindow {
     Trem *trem5;
 
     Semaforo *semaforos;
-    // Criando objetos de semaforo
-    // static sem_t semaforo_1;
-    // static sem_t semaforo_2;
-    // static sem_t semaforo_3;
-    // static sem_t semaforo_4;
-    // static sem_t semaforo_5;
-    // static sem_t semaforo_6;
-    // static sem_t semaforo_7;
 };
 #endif  // MAINWINDOW_H
