@@ -3,7 +3,8 @@
 
 #include <QDebug>
 #include <QThread>
-#include <semaphore.h>
+
+#include "semaforo.h"
 
 /*
  * Classe Trem herda QThread
@@ -15,21 +16,20 @@
 class Trem : public QThread {
     Q_OBJECT
    public:
-    Trem(int, int, int);      // construtor
-    void run();               // função a ser executada pela thread
-    void setVelocidade(int);  // função para alterar a velocidade
-    int getRegião(int x, int y);
+    Trem(int ID, int x, int y, Semaforo *&semaforos);  // construtor
+    void run();                                        // função a ser executada pela thread
+    void setVelocidade(int);                           // função para alterar a velocidade
 
     // Cria um sinal
    signals:
     void updateGUI(int, int, int);
-    void semaforos(int, int, int);
 
    private:
     int x;           // posição X do trem na tela
     int y;           // posição Y do trem na tela
     int ID;          // ID do trem
     int velocidade;  // Velocidade. É o tempo de dormir em milisegundos entre a mudança de posição do trem
+    Semaforo *semaforos;
 };
 
 #endif  // TREM_H
