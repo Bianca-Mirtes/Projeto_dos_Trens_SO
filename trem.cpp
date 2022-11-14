@@ -39,11 +39,21 @@ void Trem::run() {
                     }
                     x += 10;
                 } else if (x == 470 && y < 230){
+                    // semaforo 3
+                    if (y == 210 && semaforos->getValorSemaforo(3) > 0){
+                        sem_wait(semaforos->getSemaforo(3));
+                    } else if (x == 210 && semaforos->getValorSemaforo(3) == 0) {
+                        break;
+                    }
                     y += 10;
                 } else if (x > 230 && y == 230){
                     // semaforo 1
                     if (x == 470 && semaforos->getValorSemaforo(1) == 0){
                         sem_post(semaforos->getSemaforo(1));
+                    }
+                    // semaforo 3
+                    if (x == 340 && semaforos->getValorSemaforo(3) == 0){
+                        sem_post(semaforos->getSemaforo(3));
                     }
                     // semaforo 2
                     if(x == 370 && semaforos->getValorSemaforo(2) > 0){
@@ -68,6 +78,7 @@ void Trem::run() {
                     break;
                 }
                 if (y == 30 && x < 710) {
+                    // semaforo 1
                     if (x == 470 && semaforos->getValorSemaforo(1) == 0) {
                         sem_post(semaforos->getSemaforo(1));
                     }
@@ -91,8 +102,18 @@ void Trem::run() {
                     } else if (x == 490 && semaforos->getValorSemaforo(1) == 0) {
                         break;
                     }
+                    // semaforo 4
+                    if (x == 610 && semaforos->getValorSemaforo(4) > 0) {
+                        sem_wait(semaforos->getSemaforo(4));
+                    } else if (x == 610 && semaforos->getValorSemaforo(4) == 0) {
+                        break;
+                    }
                     x -= 10;
                 } else {
+                    // semaforo 4
+                    if(x == 470 && y == 220 && semaforos->getValorSemaforo(4) == 0){
+                        sem_post(semaforos->getSemaforo(4));
+                    }
                     y -= 10;
                 }
                 if (velocidade) {
@@ -100,22 +121,37 @@ void Trem::run() {
                 }
                 break;
             case 3:  // Trem 3
-                if (velocidade == 200) {
+                if (velocidade == 200){
                     break;
                 }
                 if (y == 230 && x < 350){
-                    if (x == 210 && semaforos->getValorSemaforo(2) > 0) {
+                    // semaforo 2
+                    if (x == 210 && semaforos->getValorSemaforo(2) > 0){
+                        if(semaforos->getValorSemaforo(3) == 0){
+                            break;
+                        }
                         sem_wait(semaforos->getSemaforo(2));
                     } else if (x == 210 && semaforos->getValorSemaforo(2) == 0) {
                         break;
                     }
+                    // semaforo 6
+                    if (x == 330 && semaforos->getValorSemaforo(6) > 0) {
+                        sem_wait(semaforos->getSemaforo(6));
+                    } else if (x == 330 && semaforos->getValorSemaforo(6) == 0) {
+                        break;
+                    }
                     x += 10;
-                } else if (x == 350 && y < 410) {
+                } else if (x == 350 && y < 410){
+                    // semaforo 2
                     if(y == 240 && semaforos->getValorSemaforo(2) == 0){
                         sem_post(semaforos->getSemaforo(2));
                     }
                     y += 10;
-                } else if (x > 110 && y == 410) {
+                } else if (x > 110 && y == 410){
+                    // semaforo 6
+                    if(x == 350 && semaforos->getValorSemaforo(6) == 0){
+                        sem_post(semaforos->getSemaforo(6));
+                    }
                     x -= 10;
                 } else {
                     y -= 10;
@@ -125,19 +161,61 @@ void Trem::run() {
                 }
                 break;
             case 4:  // Trem 4
-                if (velocidade == 200) {
+                if(velocidade == 200){
                     break;
                 }
-                if (y == 230 && x < 590) {
+                if (y == 230 && x < 590){
+                    // semaforo 6
+                    if(x == 360 && semaforos->getValorSemaforo(6) == 0){
+                        sem_post(semaforos->getSemaforo(6));
+                    }
+                    // semaforo 3
+                    if(x == 460 && semaforos->getValorSemaforo(3) == 0){
+                        sem_post(semaforos->getSemaforo(3));
+                    }
+                    // semaforo 4
+                    if(x == 450 && semaforos->getValorSemaforo(4) > 0){
+                        sem_wait(semaforos->getSemaforo(4));
+                    }else if (x == 450 && semaforos->getValorSemaforo(4) == 0){
+                        break;
+                    }
+                    // semaforo 7
+                    if(x == 570 && semaforos->getValorSemaforo(7) > 0){
+                        sem_wait(semaforos->getSemaforo(7));
+                    }else if (x == 570 && semaforos->getValorSemaforo(7) == 0){
+                        break;
+                    }
                     x += 10;
-                } else if (x == 590 && y < 410) {
+                } else if (x == 590 && y < 410){
+                    // semaforo 4
+                    if(y == 240 && semaforos->getValorSemaforo(4) == 0){
+                        sem_post(semaforos->getSemaforo(4));
+                    }
                     y += 10;
-                } else if (x > 350 && y == 410) {
+                } else if (x > 350 && y == 410){
+                    // semaforo 7
+                    if(x == 580 && semaforos->getValorSemaforo(7) == 0){
+                        sem_post(semaforos->getSemaforo(7));
+                    }
+                    // semaforo 6
+                    if(x == 370 && semaforos->getValorSemaforo(6) > 0){
+                        if(semaforos->getValorSemaforo(2) == 0 && semaforos->getValorSemaforo(3) == 0){
+                            break;
+                        }
+                        sem_wait(semaforos->getSemaforo(6));
+                    }else if (x == 370 && semaforos->getValorSemaforo(6) == 0){
+                        break;
+                    }
                     x -= 10;
                 } else {
+                    // semaforo 3
+                    if(x == 350 && y == 250 && semaforos->getValorSemaforo(3) > 0){
+                        sem_wait(semaforos->getSemaforo(3));
+                    }else if (x == 350 && y == 250 && semaforos->getValorSemaforo(3) == 0){
+                        break;
+                    }
                     y -= 10;
                 }
-
                 if (velocidade) {
                     emit updateGUI(ID, x, y);  // Emite um sinal para atualizar a posição do trem na tela
                 }
@@ -147,18 +225,30 @@ void Trem::run() {
                     break;
                 }
                 if (y == 230 && x < 830){
+                    // semaforo 5
                     if(x == 720 && semaforos->getValorSemaforo(5) == 0){
                         sem_post(semaforos->getSemaforo(5));
+                    }
+                    // semaforo 7
+                    if(x == 600 && semaforos->getValorSemaforo(7) == 0){
+                        sem_post(semaforos->getSemaforo(7));
                     }
                     x += 10;
                 } else if (x == 830 && y < 410) {
                     y += 10;
-                } else if (x > 590 && y == 410) {
+                } else if (x > 590 && y == 410){
+                    // semaforo 7
+                    if(x == 610 && semaforos->getValorSemaforo(7) > 0){
+                        sem_wait(semaforos->getSemaforo(7));
+                    }else if (x == 610 && semaforos->getValorSemaforo(7) == 0) {
+                        break;
+                    }
                     x -= 10;
                 } else {
+                    // semaforo 5
                     if(x == 590 && y == 250 && semaforos->getValorSemaforo(5) > 0){
                         sem_wait(semaforos->getSemaforo(5));
-                    } else if (x == 590 && y == 250 && semaforos->getValorSemaforo(5) == 0) {
+                    }else if (x == 590 && y == 250 && semaforos->getValorSemaforo(5) == 0) {
                         break;
                     }
                     y -= 10;
