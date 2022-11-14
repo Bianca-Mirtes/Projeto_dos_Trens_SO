@@ -1,8 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <semaphore.h>
+
 #include <QMainWindow>
 
+#include "semaforo.h"
 #include "trem.h"
 
 namespace Ui {
@@ -43,5 +46,15 @@ class MainWindow : public QMainWindow {
     Trem *trem3;
     Trem *trem4;
     Trem *trem5;
+
+    Semaforo *semaforos;
+    // Criando objetos de semaforo
+    // static sem_t semaforo_1;
+    // static sem_t semaforo_2;
+    // static sem_t semaforo_3;
+    // static sem_t semaforo_4;
+    // static sem_t semaforo_5;
+    // static sem_t semaforo_6;
+    // static sem_t semaforo_7;
 };
 #endif  // MAINWINDOW_H

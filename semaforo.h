@@ -1,16 +1,19 @@
-// #ifndef SEMAFORO_H
-// #define SEMAFORO_H
+#ifndef SEMAFORO_H
+#define SEMAFORO_H
 
-// #include <QDebug>
-// #include <QThread>
+class Semaforo {
+   private:
+    sem_t semaforo_1;
+    sem_t semaforo_2;
+    sem_t semaforo_3;
+    sem_t semaforo_4;
+    sem_t semaforo_5;
+    sem_t semaforo_6;
+    sem_t semaforo_7;
 
-// class semaforo : public QThread {
-//     Q_OBJECT
-//    public:
-//     semaforo(int, int, int);
+   public:
+    Semaforo();
+    int teste();
+};
 
-//    private:
-//     int disponibilidadeTrajeto;  // 1 para região ocupada e 0 para região livre
-// };
-
-// #endif  // SEMAFORO_H
+#endif
