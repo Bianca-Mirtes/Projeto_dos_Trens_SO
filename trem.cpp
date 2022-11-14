@@ -26,27 +26,24 @@ void Trem::run() {
     while (true) {
         switch (ID) {
             case 1:  // Trem 1
+                qInfo() << "Velocidade Trem 1: " << this->velocidade;
                 if (velocidade == 200) {
                     break;
                 }
                 if (y == 30 && x < 470) {
-                    if (x == 450) {
-                        sem_post(semaforos->getSemaforo(1));
-                        qInfo() << "Vermelho Entrou: " << semaforos->getValorSemaforo(1);
+                    if (x == 450 && semaforos->getValorSemaforo(1) == 0) {
+                        sem_wait(semaforos->getSemaforo(1));
                     }
+
                     x += 10;
                 } else if (x == 470 && y < 230) {
                     y += 10;
                 } else if (x > 230 && y == 230) {
-                    if (x == 450) {
-                        sem_wait(semaforos->getSemaforo(1));
-                        qInfo() << "Vermelho saiu: " << semaforos->getValorSemaforo(1);
-                    }
                     x -= 10;
                 } else {
                     y -= 10;
                 }
-                if (velocidade != 100) {
+                if (velocidade) {
                     emit updateGUI(ID, x, y);  // Emite um sinal
                 }
                 break;
@@ -57,25 +54,15 @@ void Trem::run() {
                     break;
                 }
                 if (y == 30 && x < 710) {
-                    if (x == 480) {
-                        sem_wait(semaforos->getSemaforo(1));
-                        qInfo() << "Verde saiu: " << semaforos->getValorSemaforo(1);
-                    }
                     x += 10;
                 } else if (x == 710 && y < 230) {
                     y += 10;
                 } else if (x > 470 && y == 230) {
-                    if (x == 480 && semaforos->getValorSemaforo(1) > 0) {
-                        break;
-                    } else if (x == 490 && semaforos->getValorSemaforo(1) == 0) {
-                        sem_post(semaforos->getSemaforo(1));
-                        qInfo() << "Verde Entrou: " << semaforos->getValorSemaforo(1);
-                    }
                     x -= 10;
                 } else {
                     y -= 10;
                 }
-                if (velocidade != 100) {
+                if (velocidade) {
                     emit updateGUI(ID, x, y);  // Emite um sinal para atualizar a posição do trem na tela
                 }
                 break;
@@ -93,7 +80,7 @@ void Trem::run() {
                 } else {
                     y -= 10;
                 }
-                if (velocidade != 100) {
+                if (velocidade) {
                     emit updateGUI(ID, x, y);  // Emite um sinal para atualizar a posição do trem na tela
                 }
                 break;
@@ -112,7 +99,7 @@ void Trem::run() {
                     y -= 10;
                 }
 
-                if (velocidade != 100) {
+                if (velocidade) {
                     emit updateGUI(ID, x, y);  // Emite um sinal para atualizar a posição do trem na tela
                 }
                 break;
@@ -130,7 +117,7 @@ void Trem::run() {
                 } else {
                     y -= 10;
                 }
-                if (velocidade != 100) {
+                if (velocidade) {
                     emit updateGUI(ID, x, y);  // Emite um sinal para atualizar a posição do trem na tela
                 }
                 break;
