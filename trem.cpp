@@ -19,6 +19,7 @@ Trem::Trem(int ID, int x, int y, Semaforo *&semaforos) {
     this->x = x;
     this->y = y;
     this->velocidade = 100;
+    this->semaforos = semaforos;
 }
 
 // Função a ser executada após executar trem->START
@@ -26,14 +27,14 @@ void Trem::run() {
     while (true) {
         switch (ID) {
             case 1:  // Trem 1
-                qInfo() << "Velocidade Trem 1: " << this->velocidade;
                 if (velocidade == 200) {
                     break;
                 }
                 if (y == 30 && x < 470) {
                     if (x == 450 && semaforos->getValorSemaforo(1) == 0) {
-                        sem_wait(semaforos->getSemaforo(1));
+                        sem_post(semaforos->getSemaforo(1));
                     }
+                    qInfo() << semaforos->getValorSemaforo(1);
 
                     x += 10;
                 } else if (x == 470 && y < 230) {
