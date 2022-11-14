@@ -1,24 +1,20 @@
 #include "mainwindow.h"
-
 #include <QPixmap>
 #include <iostream>
 #include <semaphore.h>
 
-#include "semaforo.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
                                           ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
-    // Criando classe semaforo que contém todos os semaforos.
-    semaforos = new Semaforo();
     // Cria um novo trem com os seguintes parâmetros (ID, posição X, posição Y)
-    trem1 = new Trem(1, 230, 30, semaforos);
-    trem2 = new Trem(2, 470, 30, semaforos);
-    trem3 = new Trem(3, 110, 230, semaforos);
-    trem4 = new Trem(4, 350, 230, semaforos);
-    trem5 = new Trem(5, 590, 230, semaforos);
+    trem1 = new Trem(1, 230, 30);
+    trem2 = new Trem(2, 470, 30);
+    trem3 = new Trem(3, 110, 230);
+    trem4 = new Trem(4, 350, 230);
+    trem5 = new Trem(5, 590, 230);
 
     sem_init(&semaforo_1, 0, 1);
     sem_init(&semaforo_2, 0, 1);
