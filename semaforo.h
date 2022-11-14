@@ -1,5 +1,8 @@
 #ifndef SEMAFORO_H
 #define SEMAFORO_H
+#include <semaphore.h>
+
+#include <QDebug>
 
 class Semaforo {
    private:
@@ -14,6 +17,7 @@ class Semaforo {
    public:
     Semaforo();
     int teste();
+    sem_t getSemaforo(int num);
 };
 
 #endif

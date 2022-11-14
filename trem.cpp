@@ -21,6 +21,7 @@ Trem::Trem(int ID, int x, int y, Semaforo *&semaforos) {
     this->x = x;
     this->y = y;
     this->velocidade = 50;
+    this->semaforos = semaforos;
 }
 
 int Trem::getRegião(int x, int y) {
@@ -54,6 +55,7 @@ void Trem::run() {
             case 1:  // Trem 1
                 // qInfo() << getRegião(470, 90);
                 if (velocidade == 200) {
+                    semaforos.teste();
                     break;
                 }
                 if (y == 30 && x < 470) {

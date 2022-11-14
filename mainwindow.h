@@ -1,8 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <semaphore.h>
-
 #include <QMainWindow>
 
 #include "semaforo.h"

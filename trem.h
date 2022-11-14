@@ -32,7 +32,7 @@ class Trem : public QThread {
     int y;           // posição Y do trem na tela
     int ID;          // ID do trem
     int velocidade;  // Velocidade. É o tempo de dormir em milisegundos entre a mudança de posição do trem
-    int valorSemaforo = 0;
+    Semaforo &semaforos;
 };
 
 #endif  // TREM_H
