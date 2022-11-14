@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 
+#include "semaforo.h"
 #include "trem.h"
 
 namespace Ui {
@@ -18,7 +19,6 @@ class MainWindow : public QMainWindow {
 
    public slots:
     void updateInterface(int, int, int);
-    void controlaSemaforos(int, int, int);
 
    private slots:
     void on_iniciar_clicked();
@@ -45,12 +45,6 @@ class MainWindow : public QMainWindow {
     Trem *trem4;
     Trem *trem5;
 
-    sem_t semaforo_1;
-    sem_t semaforo_2;
-    sem_t semaforo_3;
-    sem_t semaforo_4;
-    sem_t semaforo_5;
-    sem_t semaforo_6;
-    sem_t semaforo_7;
+    Semaforo *semaforos;
 };
 #endif  // MAINWINDOW_H
