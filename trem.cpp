@@ -2,16 +2,6 @@
 
 #include <QtCore>
 
-#define N_TRENS 5;
-#define N_REGIOES 7;
-
-#define REGIAO_1 0;
-#define REGIAO_2 1;
-#define REGIAO_3 2;
-#define REGIAO_4 3;
-#define REGIAO_5 4;
-#define REGIAO_6 5;
-#define REGIAO_7 6;
 
 // Construtor
 Trem::Trem(int ID, int x, int y, Semaforo *&semaforos) {
@@ -33,6 +23,9 @@ void Trem::run() {
                 if (y == 30 && x < 470){
                     // semaforo 1
                     if (x == 450 && semaforos->getValorSemaforo(1) > 0) {
+                        if(semaforos->getValorSemaforo(3) == 0 && semaforos->getValorSemaforo(4) == 0){
+                            break; // T4 e T2 nas regiões 3 e 4
+                        }
                         sem_wait(semaforos->getSemaforo(1));
                     } else if (x == 450 && semaforos->getValorSemaforo(1) == 0) {
                         break;
@@ -41,8 +34,11 @@ void Trem::run() {
                 } else if (x == 470 && y < 230){
                     // semaforo 3
                     if (y == 210 && semaforos->getValorSemaforo(3) > 0){
+                        if(semaforos->getValorSemaforo(2) == 0 && semaforos->getValorSemaforo(6) == 0){
+                            break; // T3 e T4 dentro das regiões 2 e 6
+                        }
                         sem_wait(semaforos->getSemaforo(3));
-                    } else if (x == 210 && semaforos->getValorSemaforo(3) == 0) {
+                    } else if (y == 210 && semaforos->getValorSemaforo(3) == 0) {
                         break;
                     }
                     y += 10;
@@ -85,7 +81,10 @@ void Trem::run() {
                     x += 10;
                 } else if (x == 710 && y < 230){
                     // semaforo 5
-                    if (y == 210 && semaforos->getValorSemaforo(5) > 0) {
+                    if (y == 210 && semaforos->getValorSemaforo(5) > 0){
+                        if(semaforos->getValorSemaforo(4) == 0 && semaforos->getValorSemaforo(7) == 0){
+                            break; // T4 e T5 nas regiões 4 e 7
+                        }
                         sem_wait(semaforos->getSemaforo(5));
                     } else if (y == 210 && semaforos->getValorSemaforo(5) == 0) {
                         break;
@@ -103,7 +102,10 @@ void Trem::run() {
                         break;
                     }
                     // semaforo 4
-                    if (x == 610 && semaforos->getValorSemaforo(4) > 0) {
+                    if (x == 610 && semaforos->getValorSemaforo(4) > 0){
+                        if(semaforos->getValorSemaforo(1) == 0 && semaforos->getValorSemaforo(3) == 0){
+                            break; // T1 e T4 nas regiões 1 e 3
+                        }
                         sem_wait(semaforos->getSemaforo(4));
                     } else if (x == 610 && semaforos->getValorSemaforo(4) == 0) {
                         break;
@@ -127,8 +129,8 @@ void Trem::run() {
                 if (y == 230 && x < 350){
                     // semaforo 2
                     if (x == 210 && semaforos->getValorSemaforo(2) > 0){
-                        if(semaforos->getValorSemaforo(3) == 0){
-                            break;
+                        if(semaforos->getValorSemaforo(3) == 0 && semaforos->getValorSemaforo(6) == 0){
+                            break; // T1 e T4 dentro das regiões 3 e 6
                         }
                         sem_wait(semaforos->getSemaforo(2));
                     } else if (x == 210 && semaforos->getValorSemaforo(2) == 0) {
@@ -170,11 +172,14 @@ void Trem::run() {
                         sem_post(semaforos->getSemaforo(6));
                     }
                     // semaforo 3
-                    if(x == 460 && semaforos->getValorSemaforo(3) == 0){
+                    if(x == 480 && semaforos->getValorSemaforo(3) == 0){
                         sem_post(semaforos->getSemaforo(3));
                     }
                     // semaforo 4
                     if(x == 450 && semaforos->getValorSemaforo(4) > 0){
+                        if(semaforos->getValorSemaforo(5) == 0 && semaforos->getValorSemaforo(7) == 0){
+                            break; // T2 e T5 nas regiões 5 e 7
+                        }
                         sem_wait(semaforos->getSemaforo(4));
                     }else if (x == 450 && semaforos->getValorSemaforo(4) == 0){
                         break;
@@ -200,7 +205,7 @@ void Trem::run() {
                     // semaforo 6
                     if(x == 370 && semaforos->getValorSemaforo(6) > 0){
                         if(semaforos->getValorSemaforo(2) == 0 && semaforos->getValorSemaforo(3) == 0){
-                            break;
+                            break; // T3 e T1 dentro das regiões 2 e 3
                         }
                         sem_wait(semaforos->getSemaforo(6));
                     }else if (x == 370 && semaforos->getValorSemaforo(6) == 0){
@@ -210,6 +215,9 @@ void Trem::run() {
                 } else {
                     // semaforo 3
                     if(x == 350 && y == 250 && semaforos->getValorSemaforo(3) > 0){
+                        if(semaforos->getValorSemaforo(1) == 0 && semaforos->getValorSemaforo(4) == 0){
+                            break; // T1 e T2 nas regiões 1 e 4
+                        }
                         sem_wait(semaforos->getSemaforo(3));
                     }else if (x == 350 && y == 250 && semaforos->getValorSemaforo(3) == 0){
                         break;
@@ -239,6 +247,9 @@ void Trem::run() {
                 } else if (x > 590 && y == 410){
                     // semaforo 7
                     if(x == 610 && semaforos->getValorSemaforo(7) > 0){
+                        if(semaforos->getValorSemaforo(4) == 0 && semaforos->getValorSemaforo(5) == 0){
+                            break; // T4 e T2 nas regiões 4 e 5
+                        }
                         sem_wait(semaforos->getSemaforo(7));
                     }else if (x == 610 && semaforos->getValorSemaforo(7) == 0) {
                         break;
