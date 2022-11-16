@@ -19,7 +19,7 @@ void Trem::run() {
                 if (velocidade == 200) {  // condição de parada do trem
                     break;
                 }
-                if (y == 30 && x < 470) {
+                if (y == 30 && x < 470){
                     // semaforo 1
                     if (x == 450 && semaforos->getValorSemaforo(1) > 0) {
                         if (semaforos->getValorSemaforo(3) == 0 && semaforos->getValorSemaforo(5) == 0 && semaforos->getValorSemaforo(7) == 0) {

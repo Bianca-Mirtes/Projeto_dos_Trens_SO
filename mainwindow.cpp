@@ -39,13 +39,13 @@ void MainWindow::updateInterface(int id, int x, int y) {
         case 2:  // Atualiza a posição do objeto da tela (quadrado) que representa o trem2
             ui->trem_2->setGeometry(x, y, 20, 20);
             break;
-        case 3:
+        case 3: // Atualiza a posição do objeto da tela (quadrado) que representa o trem3
             ui->trem_3->setGeometry(x, y, 20, 20);
             break;
-        case 4:
+        case 4: // Atualiza a posição do objeto da tela (quadrado) que representa o trem4
             ui->trem_4->setGeometry(x, y, 20, 20);
             break;
-        case 5:
+        case 5: // Atualiza a posição do objeto da tela (quadrado) que representa o trem5
             ui->trem_5->setGeometry(x, y, 20, 20);
             break;
         default:
@@ -58,7 +58,7 @@ MainWindow::~MainWindow() {
 }
 
 /*
- * Ao clicar, trens começam execução
+ * Ao chamar, os trens começam execução
  */
 void MainWindow::startTrens() {
     trem1->start();

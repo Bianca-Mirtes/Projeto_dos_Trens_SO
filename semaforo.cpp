@@ -69,7 +69,6 @@ int Semaforo::getValorSemaforo(int num) {
             sem_getvalue(&semaforo_7, &valorSemaforo7);
             return valorSemaforo7;
             break;
-
         default:
             break;
     }

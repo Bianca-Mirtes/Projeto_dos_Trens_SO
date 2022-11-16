@@ -24,14 +24,14 @@ class Trem : public QThread {
 
     // Cria um sinal
    signals:
-    void updateGUI(int, int, int);
+    void updateGUI(int, int, int); // sinaliza que a posição do trem deve ser atualizada no mapa
 
    private:
     int x;           // posição X do trem na tela
     int y;           // posição Y do trem na tela
     int ID;          // ID do trem
     int velocidade;  // Velocidade. É o tempo de dormir em milisegundos entre a mudança de posição do trem
-    Semaforo *semaforos;
+    Semaforo *semaforos; // Semaforos utilizados para administrar o andamento dos trens evitando colisões
 };
 
 #endif  // TREM_H

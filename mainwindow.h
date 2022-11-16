@@ -20,19 +20,19 @@ class MainWindow : public QMainWindow {
     ~MainWindow();
 
    public slots:
-    void updateInterface(int, int, int);
-    void startTrens();
+    void updateInterface(int, int, int); // atualiza a interface visual com a nova posição dos trens
+    void startTrens(); // inicia o andamento dos trens na malha ferroviaria
 
    private slots:
-    void on_slider_trem1_valueChanged(int value);
+    void on_slider_trem1_valueChanged(int value); // altera a velocidade do trem 1
 
-    void on_slider_trem2_valueChanged(int value);
+    void on_slider_trem2_valueChanged(int value); // altera a velocidade do trem 2
 
-    void on_slider_trem3_valueChanged(int value);
+    void on_slider_trem3_valueChanged(int value); // altera a velocidade do trem 3
 
-    void on_slider_trem4_valueChanged(int value);
+    void on_slider_trem4_valueChanged(int value); // altera a velocidade do trem 4
 
-    void on_slider_trem5_valueChanged(int value);
+    void on_slider_trem5_valueChanged(int value); // altera a velocidade do trem 5
 
    private:
     Ui::MainWindow *ui;
@@ -44,6 +44,7 @@ class MainWindow : public QMainWindow {
     Trem *trem4;
     Trem *trem5;
 
+    // Cria o objeto semaforos
     Semaforo *semaforos;
 };
 #endif  // MAINWINDOW_H
