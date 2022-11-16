@@ -9,9 +9,25 @@
 <img src="https://user-images.githubusercontent.com/71523376/202059247-5c450442-bec0-46d2-ab2e-3276de6438f5.png">
 </p>
 
+# 💻 Requisitos
+
+* ### Qt 6.4.0
+* ### MinGW 11.2.0 64-bit for C++
+
+ * ## Como rodar:
+  1. Abra o Qt creator
+
+  2. Abre um projeto
+
+  3. Encontre o arquivo "ProjetoTrens_SO.pro" localizado dentro desse repositório
+
+  4. Faça o build pelo qt
+
+  5. Execute pelo qt
 
 
-# ⚙️ Funcionamento 🚦
+
+# 🚦 Funcionamento 
 ### Cada trem é uma thread independente que possui velocidade própria alterada por um controlador de velocidade, que está implementado na interface visual. Utilizamos a biblioteca semaphore.h para administrar o acesso às regiões críticas, onde podem haver colisões dos trens. 
 
 ***
