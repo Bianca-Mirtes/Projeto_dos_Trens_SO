@@ -21,12 +21,9 @@ class MainWindow : public QMainWindow {
 
    public slots:
     void updateInterface(int, int, int);
+    void startTrens();
 
    private slots:
-    void on_iniciar_clicked();
-
-    void on_terminar_clicked();
-
     void on_slider_trem1_valueChanged(int value);
 
     void on_slider_trem2_valueChanged(int value);

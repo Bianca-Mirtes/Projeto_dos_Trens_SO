@@ -15,26 +15,22 @@ Trem::Trem(int ID, int x, int y, Semaforo *&semaforos) {
 // Função a ser executada após executar trem->START
 void Trem::run() {
     while (true) {
-        qInfo() << "Valor semaforo 1: " << semaforos->getValorSemaforo(1);
-        qInfo() << "Valor semaforo 2: " << semaforos->getValorSemaforo(2);
-        qInfo() << "Valor semaforo 3: " << semaforos->getValorSemaforo(3);
-        qInfo() << "Valor semaforo 4: " << semaforos->getValorSemaforo(4);
         switch (ID) {
             case 1:  // Trem 1
-                if (velocidade == 200){
+                if (velocidade == 200){ // condição de parada do trem
                     break;
                 }
                 if (y == 30 && x < 470){
                     // semaforo 1
                     if (x == 450 && semaforos->getValorSemaforo(1) > 0){
                         if(semaforos->getValorSemaforo(3) == 0 && semaforos->getValorSemaforo(5) == 0 && semaforos->getValorSemaforo(7) == 0){
-                            break;
+                            break;  // T2, T4 e T5 nas regiões criticas 3, 5 e 7
                         }
                         if(semaforos->getValorSemaforo(2) == 0 && semaforos->getValorSemaforo(4) == 0 && semaforos->getValorSemaforo(6) == 0){
-                            break;
+                            break; // T2, T3 e T4 nas regiões criticas 2, 4 e 6
                         }
                         if(semaforos->getValorSemaforo(3) == 0 && semaforos->getValorSemaforo(4) == 0){
-                            break; // T4 e T2 nas regiões 3 e 4
+                            break; // T4 e T2 nas regiões criticas 3 e 4
                         }
                         sem_wait(semaforos->getSemaforo(1));
                     } else if (x == 450 && semaforos->getValorSemaforo(1) == 0) {
@@ -45,7 +41,7 @@ void Trem::run() {
                     // semaforo 3
                     if (y == 210 && semaforos->getValorSemaforo(3) > 0){
                         if(semaforos->getValorSemaforo(2) == 0 && semaforos->getValorSemaforo(6) == 0){
-                            break; // T3 e T4 dentro das regiões 2 e 6
+                            break; // T3 e T4 dentro das regiões criticas 2 e 6
                         }
                         sem_wait(semaforos->getSemaforo(3));
                     } else if (y == 210 && semaforos->getValorSemaforo(3) == 0) {
@@ -80,10 +76,10 @@ void Trem::run() {
                 }
                 break;
             case 2:  // Trem 2
-                if (velocidade == 200) {
+                if (velocidade == 200){ // condição de parada do trem
                     break;
                 }
-                if (y == 30 && x < 710) {
+                if (y == 30 && x < 710){
                     // semaforo 1
                     if (x == 470 && semaforos->getValorSemaforo(1) == 0) {
                         sem_post(semaforos->getSemaforo(1));
@@ -93,10 +89,10 @@ void Trem::run() {
                     // semaforo 5
                     if (y == 210 && semaforos->getValorSemaforo(5) > 0){
                         if(semaforos->getValorSemaforo(1) == 0 && semaforos->getValorSemaforo(3) == 0 && semaforos->getValorSemaforo(7) == 0){
-                            break;
+                            break; // T1, T4 e T5 nas regiões criticas 1, 3 e 7
                         }
                         if(semaforos->getValorSemaforo(4) == 0 && semaforos->getValorSemaforo(7) == 0){
-                            break; // T4 e T5 nas regiões 4 e 7
+                            break; // T4 e T5 nas regiões criticas 4 e 7
                         }
                         sem_wait(semaforos->getSemaforo(5));
                     } else if (y == 210 && semaforos->getValorSemaforo(5) == 0) {
@@ -117,10 +113,10 @@ void Trem::run() {
                     // semaforo 4
                     if (x == 610 && semaforos->getValorSemaforo(4) > 0){
                         if(semaforos->getValorSemaforo(1) == 0 && semaforos->getValorSemaforo(2) == 0 && semaforos->getValorSemaforo(6) == 0){
-                            break;
+                            break; // T1, T3 e T4 nas regiões criticas 1, 2 e 6
                         }
                         if(semaforos->getValorSemaforo(1) == 0 && semaforos->getValorSemaforo(3) == 0){
-                            break; // T1 e T4 nas regiões 1 e 3
+                            break; // T1 e T4 nas regiões criticas 1 e 3
                         }
                         sem_wait(semaforos->getSemaforo(4));
                     } else if (x == 610 && semaforos->getValorSemaforo(4) == 0) {
@@ -146,10 +142,10 @@ void Trem::run() {
                     // semaforo 2
                     if (x == 210 && semaforos->getValorSemaforo(2) > 0){
                         if(semaforos->getValorSemaforo(1) == 0 && semaforos->getValorSemaforo(4) == 0 && semaforos->getValorSemaforo(6) == 0){
-                            break;
+                            break; // T1, T2 e T4 dentro das regiões criticas 1, 4 e 6
                         }
                         if(semaforos->getValorSemaforo(3) == 0 && semaforos->getValorSemaforo(6) == 0){
-                            break; // T1 e T4 dentro das regiões 3 e 6
+                            break; // T1 e T4 dentro das regiões criticas 3 e 6
                         }
                         sem_wait(semaforos->getSemaforo(2));
                     } else if (x == 210 && semaforos->getValorSemaforo(2) == 0) {
@@ -197,7 +193,7 @@ void Trem::run() {
                     // semaforo 4
                     if(x == 450 && semaforos->getValorSemaforo(4) > 0){
                         if(semaforos->getValorSemaforo(5) == 0 && semaforos->getValorSemaforo(7) == 0){
-                            break; // T2 e T5 nas regiões 5 e 7
+                            break; // T2 e T5 nas regiões criticas 5 e 7
                         }
                         sem_wait(semaforos->getSemaforo(4));
                     }else if (x == 450 && semaforos->getValorSemaforo(4) == 0){
@@ -224,10 +220,10 @@ void Trem::run() {
                     // semaforo 6
                     if(x == 370 && semaforos->getValorSemaforo(6) > 0){
                         if(semaforos->getValorSemaforo(1) == 0 && semaforos->getValorSemaforo(2) == 0 && semaforos->getValorSemaforo(4) == 0){
-                            break;
+                            break;  // T1, T2 e T3 dentro das regiões criticas 1, 2 e 4
                         }
                         if(semaforos->getValorSemaforo(2) == 0 && semaforos->getValorSemaforo(3) == 0){
-                            break; // T3 e T1 dentro das regiões 2 e 3
+                            break; // T3 e T1 dentro das regiões criticas 2 e 3
                         }
                         sem_wait(semaforos->getSemaforo(6));
                     }else if (x == 370 && semaforos->getValorSemaforo(6) == 0){
@@ -238,10 +234,10 @@ void Trem::run() {
                     // semaforo 3
                     if(x == 350 && y == 250 && semaforos->getValorSemaforo(3) > 0){
                         if(semaforos->getValorSemaforo(1) == 0 && semaforos->getValorSemaforo(5) == 0 && semaforos->getValorSemaforo(7) == 0){
-                            break;
+                            break; // T1, T2 e T5 nas regiões criticas 1, 5 e 7
                         }
                         if(semaforos->getValorSemaforo(1) == 0 && semaforos->getValorSemaforo(4) == 0){
-                            break; // T1 e T2 nas regiões 1 e 4
+                            break; // T1 e T2 nas regiões criticas 1 e 4
                         }
                         sem_wait(semaforos->getSemaforo(3));
                     }else if (x == 350 && y == 250 && semaforos->getValorSemaforo(3) == 0){
@@ -273,10 +269,10 @@ void Trem::run() {
                     // semaforo 7
                     if(x == 610 && semaforos->getValorSemaforo(7) > 0){
                         if(semaforos->getValorSemaforo(1) == 0 && semaforos->getValorSemaforo(3) == 0 && semaforos->getValorSemaforo(5) == 0){
-                            break;
+                            break; // T1, T2 e T4 nas regiões criticas 1, 3 e 5
                         }
                         if(semaforos->getValorSemaforo(4) == 0 && semaforos->getValorSemaforo(5) == 0){
-                            break; // T4 e T2 nas regiões 4 e 5
+                            break; // T4 e T2 nas regiões criticas 4 e 5
                         }
                         sem_wait(semaforos->getSemaforo(7));
                     }else if (x == 610 && semaforos->getValorSemaforo(7) == 0) {

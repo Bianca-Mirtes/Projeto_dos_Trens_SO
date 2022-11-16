@@ -293,41 +293,6 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;T4&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="terminar">
-    <property name="geometry">
-     <rect>
-      <x>660</x>
-      <y>500</y>
-      <width>75</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="text">
-     <string>Desligar</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="iniciar">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>500</y>
-      <width>75</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="text">
-     <string>Ligar</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="trilho3">
     <property name="geometry">
      <rect>
@@ -1017,8 +982,6 @@ QSlider::handle:horizontal {
    <zorder>trilho1_11</zorder>
    <zorder>trem_5</zorder>
    <zorder>trem_4</zorder>
-   <zorder>terminar</zorder>
-   <zorder>iniciar</zorder>
    <zorder>trilho1</zorder>
    <zorder>trilho1_4</zorder>
    <zorder>trem_1</zorder>
